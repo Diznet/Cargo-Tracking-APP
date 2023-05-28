@@ -1,0 +1,129 @@
+/* styles.css */
+
+/* Header styles */
+header {
+    background-color: #f2f2f2;
+    padding: 20px;
+    text-align: center;
+}
+
+/* Link styles */
+a {
+    display: inline-block;
+    padding: 10px 20px;
+    background-image: linear-gradient(to right, #00F260, #0575E6);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 25px;
+    border: none;
+    cursor: pointer;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 24px;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 10px 0;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 10px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+}
+
+/* Button styles */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+/* Section styles */
+section {
+    margin-bottom: 20px;
+}
+
+section h2 {
+    font-size: 20px;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"] {
+    padding: 5px;
+}
+
+form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+
+.container-inner {
+    max-width: 800px; /* Adjust the value based on your desired container width */
+    padding: 20px;
+    background-color: #f2f2f2; /* Adjust the background color as needed */
+    border-radius: 10px;
+}
+.container-head {
+    max-width: 100%; /* Adjust the value based on your desired container width */
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.container-inner h1 {
+    text-align: center;
+}
+
+.container-head h1 {
+    text-align: center;
+}
+.container-inner form {
+    text-align: center;
+}
+.container-head form {
+    text-align: center;
+}
+
+.container-inner ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+.container-head ul {
+    list-style: none;
+    padding: 0;
+    text-align: center;
+}
+
+.container-inner footer {
+    text-align: center;
+}
+.container-head footer {
+    text-align: center;
+}

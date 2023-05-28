@@ -3,7 +3,12 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Invoice;
+use App\Models\Recipient;
+use App\Models\Sender;
+use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class DatabaseSeeder extends Seeder
 {
@@ -14,11 +19,33 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        DB::table('cities')->insert([
+            [
+                'name' => 'Бишкек'
+            ],[
+                'name' => 'Москва'
+            ],[
+                'name' => 'Астана'
+            ],[
+                'name' => 'Пекин'
+            ],[
+                'name' => 'Париж'
+            ],[
+                'name' => 'Рим'
+            ],[
+                'name' => 'Ташкент'
+            ],[
+                'name' => 'Анкара'
+            ],[
+                'name' => 'Варшава'
+            ],[
+                'name' => 'Берлин'
+            ]
+        ]);
 
-        // \App\Models\User::factory()->create([
-        //     'name' => 'Test User',
-        //     'email' => 'test@example.com',
-        // ]);
+        User::factory(100)->create();
+        Recipient::factory(100)->create();
+        Sender::factory(100)->create();
+        Invoice::factory(1000)->create();
     }
 }

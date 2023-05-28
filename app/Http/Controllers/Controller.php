@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\City;
 use App\Models\Invoice;
+use App\Models\Recipient;
+use App\Models\Sender;
 use App\Models\User;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Illuminate\Foundation\Bus\DispatchesJobs;
@@ -83,5 +86,19 @@ class Controller extends BaseController
             return view('track', ['track' => $track]);
         }
         return redirect('/login');
+    }
+
+    public function generate(){
+        if (Auth::check()){
+            $invoice = new Invoice();
+            $invoice->user_id = Auth::id();
+            $invoice->sender_id = Sender::get()->random()->id;
+            $invoice->recipient_id = Recipient::get()->random()->id;
+            $invoice->departure_id = City::get()->random()->id;
+            $invoice->current_id = City::get()->random()->id;
+            $invoice->arrival_id = City::get()->random()->id;
+            $invoice->save();
+        }
+        return back();
     }
 }

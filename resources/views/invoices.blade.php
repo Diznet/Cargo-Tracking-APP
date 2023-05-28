@@ -33,4 +33,8 @@
         @endforeach
     </table>
     </figure>
+    <form action="/generate" method="POST">
+        @csrf
+        <input type="submit" value="Generate invoice">
+    </form>
 @endsection

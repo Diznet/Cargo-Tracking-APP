@@ -39,3 +39,5 @@ Route::post('/custom-login', [Controller::class, 'customLogin']);
 Route::post('/custom-registration', [Controller::class, 'customRegistration']);
 
 Route::get('logout', [Controller::class, 'logout']);
+
+Route::post('/generate', [Controller::class, 'generate']);

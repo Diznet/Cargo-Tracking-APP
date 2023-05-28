@@ -81,6 +81,6 @@ class Controller extends BaseController
     public function invoices(){
         $userId = Auth::id();
         $invoices = Invoice::with('user_id', $userId);
-        return view('invoices', ['invoices' => $invoices]);
+        return view('home', ['invoices' => $invoices]);
     }
 }

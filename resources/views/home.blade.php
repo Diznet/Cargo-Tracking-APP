@@ -2,7 +2,7 @@
 <html>
 <head>
     <title>Cargo Tracking App</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{asset('css/style.css')}}">
 </head>
 <body>
 <header>

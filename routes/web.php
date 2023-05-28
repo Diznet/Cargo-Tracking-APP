@@ -15,7 +15,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('home');
+    return view('login');
 });
 
 Route::get('/registration', function () {
@@ -26,8 +26,16 @@ Route::get('/login', function (){
     return view('login');
 });
 
+Route::get('/track', function (){
+    return view('track');
+});
+
 Route::get('/invoices', [Controller::class, 'invoices']);
+
+Route::post('/track', [Controller::class, 'tracks']);
 
 Route::post('/custom-login', [Controller::class, 'customLogin']);
 
 Route::post('/custom-registration', [Controller::class, 'customRegistration']);
+
+Route::get('logout', [Controller::class, 'logout']);

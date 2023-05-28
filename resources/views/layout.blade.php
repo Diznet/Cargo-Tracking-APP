@@ -7,27 +7,33 @@
 <body>
 <header>
     <h1>Cargo Tracking App</h1>
-    <nav>
-        <ul>
-            <li><a href="/track">Track Shipment</a></li>
-            <li><a href="/home">Manage Shipments</a></li>
+{{--    <nav>--}}
+{{--        <ul>--}}
+{{--            <li><a href="/track">Track Shipment</a></li>--}}
+{{--            <li><a href="/invoices">Manage Shipments</a></li>--}}
+{{--            @if(\Illuminate\Support\Facades\Auth::check())--}}
+{{--                <li><a href="/logout">Log out</a></li>--}}
+{{--            @else--}}
+{{--                <li><a href="/login">Log in</a></li>--}}
+{{--            @endif--}}
+{{--        </ul>--}}
+{{--    </nav>--}}
+{{--    <section class="et-hero-tabs">--}}
+        <div class="et-hero-tabs-container">
+            <a class="et-hero-tab" href="/track">Track Shipment</a>
+            <a class="et-hero-tab" href="/invoices">Manage Shipments</a>
             @if(\Illuminate\Support\Facades\Auth::check())
-                <li><a href="/logout">Log out</a></li>
+                <a class="et-hero-tab" href="/logout">Log out</a>
             @else
-                <li><a href="/login">Log in</a></li>
+                <a class="et-hero-tab" href="/login">Log in</a>
             @endif
-        </ul>
-    </nav>
+            <span class="et-hero-tab-slider"></span>
+        </div>
 </header>
 
 <main>
-    <div class="container">
-        <div class="container-inner">
-            @yield('main')
-        <script src="script.js"></script>
-        </div>
-    </div>
-
+    @yield('main')
+    <script src="script.js"></script>
 
 </main>
 

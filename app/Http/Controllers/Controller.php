@@ -11,18 +11,11 @@ use Illuminate\Http\Request;
 use Illuminate\Routing\Controller as BaseController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Session;
 
 class Controller extends BaseController
 {
     use AuthorizesRequests, DispatchesJobs, ValidatesRequests;
-
-    public function login()
-    {
-        if(Auth::check()){
-            return redirect('/invoices');
-        }
-        return view('auth.login');
-    }
 
     public function customLogin(Request $request)
     {
@@ -42,15 +35,6 @@ class Controller extends BaseController
         }
 
         return redirect("/login")->with('trouble','Login details are not valid');
-    }
-
-    public function registration()
-    {
-        if (Auth::check()){
-            return redirect('/invoices');
-        }
-
-        return view('auth.registration');
     }
 
     public function customRegistration(Request $request)
@@ -78,9 +62,26 @@ class Controller extends BaseController
         ]);
     }
 
+    public function logout() {
+        Session::flush();
+        Auth::logout();
+
+        return redirect('/login');
+    }
+
     public function invoices(){
-        $userId = Auth::id();
-        $invoices = Invoice::with('user_id', $userId);
-        return view('home', ['invoices' => $invoices]);
+        if (Auth::check()) {
+            return view('invoices');
+        }
+        return redirect('/login');
+    }
+
+    public function tracks(Request $request){
+        if (Auth::check()){
+            $trackId = $request->input('trackingNumber');
+            $track = Invoice::find($trackId);
+            return view('track', ['track' => $track]);
+        }
+        return redirect('/login');
     }
 }

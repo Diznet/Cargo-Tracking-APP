@@ -19,8 +19,10 @@ return new class extends Migration
             $table->foreignId('sender_id')->constrained();
             $table->foreignId('recipient_id')->constrained();
             $table->unsignedBigInteger('departure_id');
+            $table->unsignedBigInteger('current_id');
             $table->unsignedBigInteger('arrival_id');
             $table->foreign('departure_id')->references('id')->on('cities');
+            $table->foreign('current_id')->references('id')->on('cities');
             $table->foreign('arrival_id')->references('id')->on('cities');
             $table->timestamps();
         });

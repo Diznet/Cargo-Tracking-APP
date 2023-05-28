@@ -25,6 +25,7 @@ class InvoiceFactory extends Factory
             'sender_id' => Sender::get()->random(),
             'recipient_id' => Recipient::get()->random(),
             'departure_id' => City::get()->random(),
+            'current_id' => City::get()->random(),
             'arrival_id' => City::get()->random(),
         ];
     }

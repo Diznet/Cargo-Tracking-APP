@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +15,19 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('home');
 });
+
+Route::get('/registration', function () {
+    return view('registration');
+});
+
+Route::get('/login', function (){
+    return view('login');
+});
+
+Route::get('/invoices', [Controller::class, 'invoices']);
+
+Route::post('/custom-login', [Controller::class, 'customLogin']);
+
+Route::post('/custom-registration', [Controller::class, 'customRegistration']);

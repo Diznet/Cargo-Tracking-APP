@@ -23,6 +23,9 @@ class City extends Model
         return $this->hasMany(Invoice::class, 'arrival_id');
     }
 
+    public function currents(){
+        return $this->hasMany(Invoice::class, 'current_id');
+    }
 
     public $timestamps = false;
 }

@@ -15,6 +15,10 @@ class Invoice extends Model
         return $this->belongsTo(City::class, 'departure_id');
     }
 
+    public function current(){
+        return $this->belongsTo(City::class, 'current_id');
+    }
+
     public function arrival(){
         return $this->belongsTo(City::class, 'arrival_id');
     }

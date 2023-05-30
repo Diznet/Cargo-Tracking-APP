@@ -27,6 +27,6 @@
             <br>
             <input type="submit" value="Login">
         </form>
-        <span>Not registered? <a href="/registration">Register</a></span>
+        <div class="abug"><span>Not registered? <a href="/registration">Register</a></span></div>
     </section>
 @endsection

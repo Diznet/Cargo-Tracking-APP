@@ -80,12 +80,9 @@ class Controller extends BaseController
     }
 
     public function tracks(Request $request){
-        if (Auth::check()){
             $trackId = $request->input('trackingNumber');
             $track = Invoice::find($trackId);
             return view('track', ['track' => $track]);
-        }
-        return redirect('/login');
     }
 
     public function generate(){
